@@ -241,30 +241,9 @@ button {
   font-size: 12px;
   color: rgba(255,255,255,0.4);
 }
-/* Corregir posición del chatbot */
+
+
 [data-zeno-bot-embedded] {
-  bottom: 80px !important; /* Ajusta según la altura de tu barra fija */
-  right: 20px !important;
-  z-index: 9999 !important;
-}
-
-/* Para dispositivos móviles */
-@media (max-width: 768px) {
-  [data-zeno-bot-embedded] {
-    bottom: 70px !important;
-    right: 10px !important;
-  }
-}
-
-/* Asegurar que el iframe del chatbot tenga altura adecuada */
-[data-zeno-bot-embedded] iframe {
-  height: 500px !important;
-  max-height: calc(100vh - 100px) !important;
-}
-
-/* Prevenir cortes en pantallas pequeñas */
-@media (max-height: 700px) {
-  [data-zeno-bot-embedded] iframe {
-    height: 400px !important;
-  }
+  top: 80px !important; /* Altura del header + margen */
+  bottom: auto !important;
 }
