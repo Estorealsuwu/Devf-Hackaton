@@ -241,3 +241,8 @@ button {
   font-size: 12px;
   color: rgba(255,255,255,0.4);
 }
+[data-zeno-bot="embed"] iframe {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 12px;   /* opcional, esquinas redondeadas */
+}
