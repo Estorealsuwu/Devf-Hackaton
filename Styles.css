@@ -242,8 +242,3 @@ button {
   color: rgba(255,255,255,0.4);
 }
 
-
-[data-zeno-bot-embedded] {
-  top: 80px !important; /* Altura del header + margen */
-  bottom: auto !important;
-}
