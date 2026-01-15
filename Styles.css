@@ -241,61 +241,30 @@ button {
   font-size: 12px;
   color: rgba(255,255,255,0.4);
 }
-/* Estilo general del contenedor del chatbot */
-[data-zeno-bot="embed"] {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 360px;
-  max-height: 80vh;
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  overflow: hidden;
-  z-index: 9999;
-  box-sizing: border-box;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+/* Corregir posición del chatbot */
+[data-zeno-bot-embedded] {
+  bottom: 80px !important; /* Ajusta según la altura de tu barra fija */
+  right: 20px !important;
+  z-index: 9999 !important;
 }
 
-/* Asegura que todo el contenido interno se ajuste correctamente */
-[data-zeno-bot="embed"] * {
-  box-sizing: border-box;
-  font-family: 'Manrope', sans-serif;
+/* Para dispositivos móviles */
+@media (max-width: 768px) {
+  [data-zeno-bot-embedded] {
+    bottom: 70px !important;
+    right: 10px !important;
+  }
 }
 
-/* Área de mensajes del bot */
-[data-zeno-bot="embed"] .bot-message {
-  padding: 16px;
-  color: #fff;
-  word-wrap: break-word;
-  white-space: normal;
-  overflow-y: auto;
-  flex: 1;
+/* Asegurar que el iframe del chatbot tenga altura adecuada */
+[data-zeno-bot-embedded] iframe {
+  height: 500px !important;
+  max-height: calc(100vh - 100px) !important;
 }
 
-/* Botones del bot */
-[data-zeno-bot="embed"] .bot-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 12px;
-}
-
-/* Campo de entrada */
-[data-zeno-bot="embed"] input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-top: 1px solid #444;
-  background-color: #222;
-  color: #fff;
-  font-size: 14px;
-}
-
-/* Scroll interno si el contenido es largo */
-[data-zeno-bot="embed"] .bot-message,
-[data-zeno-bot="embed"] .bot-buttons {
-  max-height: 60vh;
-  overflow-y: auto;
+/* Prevenir cortes en pantallas pequeñas */
+@media (max-height: 700px) {
+  [data-zeno-bot-embedded] iframe {
+    height: 400px !important;
+  }
 }
